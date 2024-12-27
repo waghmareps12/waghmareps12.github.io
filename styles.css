@@ -363,3 +363,27 @@ footer .social-links a {
 .article-links .btn:hover {
     background: #218838;
 } 
+
+/* Additional education styles */
+.edu-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.edu-item p {
+    margin-bottom: 0.5rem;
+}
+
+.edu-item p:last-child {
+    margin-bottom: 0;
+}
+
+.edu-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: #e0e0e0;
+} 
