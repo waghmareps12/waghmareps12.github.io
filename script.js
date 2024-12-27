@@ -16,6 +16,24 @@ function toggleProject(header) {
     icon.textContent = details.classList.contains('active') ? '−' : '+';
 }
 
+// Add this function for article expansion
+function toggleArticle(header) {
+    const details = header.nextElementSibling;
+    const icon = header.querySelector('.expand-icon');
+    
+    // Close all other articles
+    document.querySelectorAll('.article-details.active').forEach(detail => {
+        if (detail !== details) {
+            detail.classList.remove('active');
+            detail.previousElementSibling.querySelector('.expand-icon').textContent = '+';
+        }
+    });
+    
+    // Toggle current article
+    details.classList.toggle('active');
+    icon.textContent = details.classList.contains('active') ? '−' : '+';
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
