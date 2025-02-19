@@ -6,43 +6,57 @@
     <title>Pranay Waghmare | Data Scientist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Add animation library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-    <div class="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 font-sans">
+    <div class="max-w-5xl mx-auto my-10 p-8 bg-white shadow-xl rounded-2xl" data-aos="fade-up">
         <!-- Profile Section -->
-        <div class="flex flex-col md:flex-row items-center md:items-start">
-            <img src="self-image.webp" alt="Pranay Waghmare" class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-md">
-            <div class="ml-6">
-                <h1 class="text-3xl font-bold text-gray-800">Pranay Suresh Waghmare</h1>
-                <p class="text-gray-600">Data Scientist | AI & Automation Enthusiast</p>
-                <p class="text-gray-500">Jacksonville, FL</p>
-                <div class="mt-4 space-x-4">
-                    <a href="mailto:waghmareps12@gmail.com" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fas fa-envelope"></i> Email
+        <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0">
+            <div class="relative">
+                <img src="self-image.webp" alt="Pranay Waghmare" 
+                     class="w-48 h-48 rounded-full border-4 border-blue-500 shadow-lg transform hover:scale-105 transition duration-300">
+            </div>
+            <div class="md:ml-8 text-center md:text-left">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Pranay Suresh Waghmare</h1>
+                <p class="text-xl text-blue-600 mb-2">Data Scientist | AI & Automation Enthusiast</p>
+                <p class="text-gray-500 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Jacksonville, FL</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                    <a href="mailto:waghmareps12@gmail.com" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fas fa-envelope text-blue-600"></i>
+                        <span>Email</span>
                     </a>
-                    <a href="http://www.linkedin.com/in/waghmareps12" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fab fa-linkedin"></i> LinkedIn
+                    <a href="http://www.linkedin.com/in/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fab fa-linkedin text-blue-600"></i>
+                        <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com/waghmareps12" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="https://github.com/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fab fa-github text-gray-700"></i>
+                        <span>GitHub</span>
                     </a>
-                    <a href="https://huggingface.co/waghmareps12" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fas fa-robot"></i> Hugging Face
+                    <a href="https://huggingface.co/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fas fa-robot text-green-600"></i>
+                        <span>Hugging Face</span>
                     </a>
-                    <a href="https://medium.com/@pranay1001090" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fab fa-medium"></i> Medium
+                    <a href="https://medium.com/@pranay1001090" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fab fa-medium text-gray-800"></i>
+                        <span>Medium</span>
                     </a>
-                    <a href="https://twitter.com/waghmareps12" class="text-blue-600 font-semibold hover:text-blue-800">
-                        <i class="fab fa-twitter"></i> Twitter
+                    <a href="https://twitter.com/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                        <i class="fab fa-twitter text-blue-400"></i>
+                        <span>Twitter</span>
                     </a>
                 </div>
             </div>
         </div>
 
         <!-- About Section -->
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold text-gray-700">About Me</h2>
-            <div class="space-y-4 text-gray-600 mt-2">
+        <div class="mt-12 p-6 bg-gray-50 rounded-xl shadow-inner" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-user-circle text-blue-500 mr-2"></i>About Me
+            </h2>
+            <div class="space-y-4 text-gray-600">
                 <p>
                     I specialize in <span class="font-semibold">AI-driven automation, NLP, and data analytics</span>. My expertise includes developing <span class="font-semibold">intelligent systems, streamlining workflows, and leveraging machine learning</span> to drive business impact.
                 </p>
@@ -58,50 +72,128 @@
         </div>
 
         <!-- Experience Section -->
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold text-gray-700">Experience</h2>
-            <div class="mt-4">
-                <h3 class="text-xl font-semibold text-gray-800">Genpact - Data Scientist</h3>
-                <p class="text-gray-500">June 2022 – Present | Jacksonville, US</p>
-                <ul class="list-disc list-inside text-gray-600 mt-2 space-y-2">
-                    <li>Designed and deployed a Retrieval-Augmented Generation (RAG) chatbot integrated with LangChain and Azure OpenAI, leveraging FAISS and pandas DataFrame agents to streamline sales inquiry workflows. Reduced customer response time by 80%.</li>
-                    <li>Led the implementation of Generative AI solutions across the organization, including designing RAG-based chatbots, automating report generation workflows, and deploying web automation agents; collaborated with clients to pitch tailored AI solutions, driving adoption and enhancing decision-making efficiency.</li>
-                    <li>Migrated the entire legacy SAS-based codebase workflows to Python, automating quota-setting and payout processes. Achieved an 80% reduction in manual effort and a 20% improvement in accuracy.</li>
-                    <li>Implemented end-to-end churn analytics solution for a healthcare client using XGBoost and AWS SageMaker services. Model exceeded performance targets with 83% test accuracy.</li>
-                    <li>Developed and automated data pipelines on AWS using Alteryx to ingest data from diverse sources, transform it, and load into Amazon S3 and Redshift. Increased efficiency of ETL process by 30% through implementing reusable workflows.</li>
-                    <li>Developed a Selenium-based web automation script to automate payment uploads for approximately 250 vendors, reducing manual processing time by 90% and significantly improving operational efficiency.</li>
-                    <li>Established A/B testing frameworks, implemented reporting dashboards, and communicated data-driven insights to executive stakeholders, enabling data-informed product development and growth initiatives.</li>
-                </ul>
-            </div>
+        <div class="mt-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-briefcase text-blue-500 mr-2"></i>Experience
+            </h2>
+            <div class="space-y-8">
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Genpact - Data Scientist</h3>
+                            <p class="text-gray-500"><i class="far fa-calendar-alt mr-2"></i>June 2022 – Present | Jacksonville, US</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 ml-4">
+                        <li>Designed and deployed a Retrieval-Augmented Generation (RAG) chatbot integrated with LangChain and Azure OpenAI, leveraging FAISS and pandas DataFrame agents to streamline sales inquiry workflows. Reduced customer response time by 80%.</li>
+                        <li>Led the implementation of Generative AI solutions across the organization, including designing RAG-based chatbots, automating report generation workflows, and deploying web automation agents; collaborated with clients to pitch tailored AI solutions, driving adoption and enhancing decision-making efficiency.</li>
+                        <li>Migrated the entire legacy SAS-based codebase workflows to Python, automating quota-setting and payout processes. Achieved an 80% reduction in manual effort and a 20% improvement in accuracy.</li>
+                        <li>Implemented end-to-end churn analytics solution for a healthcare client using XGBoost and AWS SageMaker services. Model exceeded performance targets with 83% test accuracy.</li>
+                        <li>Developed and automated data pipelines on AWS using Alteryx to ingest data from diverse sources, transform it, and load into Amazon S3 and Redshift. Increased efficiency of ETL process by 30% through implementing reusable workflows.</li>
+                        <li>Developed a Selenium-based web automation script to automate payment uploads for approximately 250 vendors, reducing manual processing time by 90% and significantly improving operational efficiency.</li>
+                        <li>Established A/B testing frameworks, implemented reporting dashboards, and communicated data-driven insights to executive stakeholders, enabling data-informed product development and growth initiatives.</li>
+                    </ul>
+                </div>
 
-            <div class="mt-6">
-                <h3 class="text-xl font-semibold text-gray-800">Dar India Private Limited - Structural Engineer – Data Analyst</h3>
-                <p class="text-gray-500">July 2016 – July 2021 | Pune, India</p>
-                <ul class="list-disc list-inside text-gray-600 mt-2 space-y-2">
-                    <li>Automated structural analysis workflows by developing custom ETABSxPython scripts, reducing analysis time for complex projects by 40% and enabling 30% faster iterations for design optimization across projects worth over $10 million.</li>
-                    <li>Streamlined interdisciplinary collaboration by integrating structural models from ETABS with Revit, improving data exchange efficiency by 50%, reducing rework by 20%, and ensuring error-free project delivery for projects valued at $25 million.</li>
-                    <li>Developed automation scripts to optimize repetitive structural design tasks, boosting productivity by 25% and reducing errors, achieving annual cost savings of over $100,000.</li>
-                </ul>
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Dar India Private Limited - Structural Engineer – Data Analyst</h3>
+                            <p class="text-gray-500"><i class="far fa-calendar-alt mr-2"></i>July 2016 – July 2021 | Pune, India</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 ml-4">
+                        <li>Automated structural analysis workflows by developing custom ETABSxPython scripts, reducing analysis time for complex projects by 40% and enabling 30% faster iterations for design optimization across projects worth over $10 million.</li>
+                        <li>Streamlined interdisciplinary collaboration by integrating structural models from ETABS with Revit, improving data exchange efficiency by 50%, reducing rework by 20%, and ensuring error-free project delivery for projects valued at $25 million.</li>
+                        <li>Developed automation scripts to optimize repetitive structural design tasks, boosting productivity by 25% and reducing errors, achieving annual cost savings of over $100,000.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- Projects Section -->
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold text-gray-700">Projects</h2>
-            <ul class="list-disc list-inside text-gray-600 mt-2">
-                <li><strong>AI-Powered Sales Chatbot:</strong> Implemented a RAG chatbot using LangChain & Azure OpenAI.</li>
-                <li><strong>Credit Card Fraud Detection:</strong> Built an ML model achieving 85% ROC AUC.</li>
-                <li><strong>Disney+ Character Recommendation Engine:</strong> NLP-based sentiment analysis using Reddit data.</li>
-            </ul>
+        <div class="mt-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-project-diagram text-blue-500 mr-2"></i>Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-500 text-3xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">LangChain-Mistral-Ollama Chatbot</h3>
+                    <p class="text-gray-600 mb-4">Built a conversational AI interface using Mistral model via Ollama, integrated with LangChain and Chainlit for deployment.</p>
+                    <div class="flex gap-2">
+                        <a href="https://github.com/waghmareps12/langchain-mistral-ollama-chainlit" 
+                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                            <i class="fab fa-github text-gray-700 mr-2"></i>
+                            <span>View Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Local RAG System with Ollama</h3>
+                    <p class="text-gray-600 mb-4">Developed a Retrieval-Augmented Generation system using FAISS for efficient document search and Ollama for local LLM integration.</p>
+                    <div class="flex gap-2">
+                        <a href="https://github.com/waghmareps12/ollama_local_rag" 
+                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
+                            <i class="fab fa-github text-gray-700 mr-2"></i>
+                            <span>View Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-500 text-3xl mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Credit Card Fraud Detection</h3>
+                    <p class="text-gray-600 mb-4">Developed ML models for fraud detection, achieving 85% ROC AUC through advanced feature engineering and model optimization.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-purple-500 text-3xl mb-4">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Disney+ Character Recommendation</h3>
+                    <p class="text-gray-600 mb-4">Created a recommendation engine using NLP and sentiment analysis on Reddit data to suggest Disney+ characters.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Skills Section -->
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold text-gray-700">Skills</h2>
-            <p class="text-gray-600 mt-2">
-                Python, SQL, AWS, Google Cloud, Airflow, TensorFlow, PyTorch, NLP, Deep Learning, Data Engineering
-            </p>
+        <div class="mt-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-tools text-blue-500 mr-2"></i>Skills
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full">Python</span>
+                <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full">SQL</span>
+                <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full">AWS</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full">TensorFlow</span>
+                <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full">PyTorch</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full">NLP</span>
+                <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-full">Deep Learning</span>
+                <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-full">Data Engineering</span>
+            </div>
         </div>
     </div>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
