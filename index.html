@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Open Graph / LinkedIn -->
+
+    <!-- SEO / Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://waghmareps12.github.io/">
     <meta property="og:title" content="Pranay Waghmare | Data Scientist">
     <meta property="og:description" content="AI & Machine Learning Engineer specializing in LLMs, RAG Systems, and Data Analytics">
     <meta property="og:image" content="https://github.com/waghmareps12/waghmareps12.github.io/blob/main/thumbnail.png">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://waghmareps12.github.io/">
     <meta property="twitter:title" content="Pranay Waghmare | Data Scientist">
@@ -19,226 +17,756 @@
     <meta property="twitter:image" content="https://github.com/waghmareps12/waghmareps12.github.io/blob/main/thumbnail.png">
 
     <title>Pranay Waghmare | Data Scientist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Add animation library -->
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        /* ── Reset & base ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* ── Tokens ── */
+        :root {
+            --blue:        #2563eb;
+            --blue-dark:   #1d4ed8;
+            --blue-light:  #eff6ff;
+            --blue-mid:    #bfdbfe;
+            --text-1:      #0f172a;
+            --text-2:      #64748b;
+            --text-3:      #94a3b8;
+            --border:      #e2e8f0;
+            --surface:     #f8fafc;
+            --white:       #ffffff;
+        }
+
+        /* ── Sticky nav ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text-1);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--blue); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-2);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--blue);
+            color: #fff;
+            padding: 0.5rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--blue-dark); }
+
+        /* ── Section wrapper ── */
+        section { padding: 5.5rem 0; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .section-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 0.4rem;
+        }
+        .section-heading {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--text-1);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+        .section-rule {
+            width: 2.5rem;
+            height: 3px;
+            background: var(--blue);
+            border-radius: 99px;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Buttons ── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blue);
+            color: #fff;
+            padding: 0.65rem 1.35rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--text-2);
+            border: 1.5px solid var(--border);
+            padding: 0.65rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s, transform 0.15s;
+        }
+        .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+
+        /* ── Hero ── */
+        #hero {
+            padding: 6rem 0 5rem;
+            background: linear-gradient(150deg, #f0f7ff 0%, #ffffff 55%);
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+        .hero-text { flex: 1; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 1.25rem;
+        }
+        .hero-badge .dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.1rem);
+            font-weight: 800;
+            line-height: 1.13;
+            color: var(--text-1);
+            letter-spacing: -0.04em;
+            margin-bottom: 0.75rem;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--blue);
+            margin-bottom: 0.85rem;
+        }
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.87rem;
+            color: var(--text-3);
+            margin-bottom: 1.5rem;
+        }
+        .hero-bio {
+            font-size: 1rem;
+            color: var(--text-2);
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.75;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .hero-photo { flex-shrink: 0; }
+        .hero-photo img {
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--blue-mid);
+            box-shadow: 0 24px 64px rgba(37,99,235,0.13);
+        }
+
+        /* ── About ── */
+        #about { background: var(--surface); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--text-2);
+            margin-bottom: 1rem;
+        }
+        .about-text strong { color: var(--text-1); font-weight: 600; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .stat-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .stat-card .num {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--blue);
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+        .stat-card .lbl {
+            font-size: 0.75rem;
+            color: var(--text-3);
+            font-weight: 500;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        /* ── Experience ── */
+        #experience { background: var(--white); }
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 10px; bottom: 10px;
+            width: 2px;
+            background: var(--border);
+        }
+        .tl-item { position: relative; margin-bottom: 3rem; }
+        .tl-item:last-child { margin-bottom: 0; }
+        .tl-dot {
+            position: absolute;
+            left: -2.43rem; top: 6px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: 3px solid var(--white);
+            outline: 2px solid var(--blue);
+        }
+        .tl-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+        .tl-role {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-1);
+        }
+        .tl-company {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--blue);
+            margin-top: 0.1rem;
+        }
+        .tl-period {
+            font-size: 0.78rem;
+            color: var(--text-3);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+        .tl-list {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+        .tl-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: 0.875rem;
+            color: var(--text-2);
+            margin-bottom: 0.5rem;
+            line-height: 1.65;
+        }
+        .tl-list li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        /* ── Projects ── */
+        #projects { background: var(--surface); }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+            gap: 1.4rem;
+        }
+        .proj-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--blue);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+        .proj-card:hover {
+            box-shadow: 0 12px 40px rgba(37,99,235,0.09);
+            transform: translateY(-3px);
+        }
+        .proj-icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: var(--blue-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--blue);
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+        .proj-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 0.45rem;
+        }
+        .proj-desc {
+            font-size: 0.85rem;
+            color: var(--text-2);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1.25rem;
+        }
+        .proj-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--blue);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+        .proj-link:hover { gap: 0.65rem; }
+        .proj-link i { font-size: 0.72rem; }
+
+        /* ── Skills ── */
+        #skills { background: var(--white); }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1.25rem;
+        }
+        .skill-group {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+        }
+        .skill-cat {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.65rem;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .tag {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-2);
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--text-1);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.1rem;
+        }
+        .footer-icons a {
+            color: #475569;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-icons a:hover { color: #ffffff; }
+        footer p {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 740px) {
+            .hero-inner { flex-direction: column-reverse; align-items: flex-start; }
+            .hero-photo img { width: 150px; height: 150px; border-radius: 16px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .nav-cta { display: none; }
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100 font-sans">
-    <div class="max-w-5xl mx-auto my-10 p-8 bg-white shadow-xl rounded-2xl" data-aos="fade-up">
-        <!-- Profile Section -->
-        <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0">
-            <div class="relative">
-                <img src="self-image.webp" alt="Pranay Waghmare" 
-                     class="w-48 h-48 rounded-full border-4 border-blue-500 shadow-lg transform hover:scale-105 transition duration-300">
-            </div>
-            <div class="md:ml-8 text-center md:text-left">
-                <h1 class="text-4xl font-bold text-gray-800 mb-2">Pranay Suresh Waghmare</h1>
-                <p class="text-xl text-blue-600 mb-2">Data Scientist | AI & Automation Enthusiast</p>
-                <p class="text-gray-500 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Jacksonville, FL</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-2">
-                    <a href="mailto:waghmareps12@gmail.com" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fas fa-envelope text-blue-600"></i>
-                        <span>Email</span>
-                    </a>
-                    <a href="http://www.linkedin.com/in/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fab fa-linkedin text-blue-600"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fab fa-github text-gray-700"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://huggingface.co/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fas fa-robot text-green-600"></i>
-                        <span>Hugging Face</span>
-                    </a>
-                    <a href="https://medium.com/@pranay1001090" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fab fa-medium text-gray-800"></i>
-                        <span>Medium</span>
-                    </a>
-                    <a href="https://twitter.com/waghmareps12" class="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                        <i class="fab fa-twitter text-blue-400"></i>
-                        <span>Twitter</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+<body>
 
-        <!-- About Section -->
-        <div class="mt-12 p-6 bg-gray-50 rounded-xl shadow-inner" data-aos="fade-up">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-user-circle text-blue-500 mr-2"></i>About Me
-            </h2>
-            <div class="space-y-4 text-gray-600">
-                <p>
-                    I specialize in <span class="font-semibold">AI-driven automation, NLP, and data analytics</span>. My expertise includes developing <span class="font-semibold">intelligent systems, streamlining workflows, and leveraging machine learning</span> to drive business impact.
+<!-- ── NAV ── -->
+<nav>
+    <a class="nav-logo" href="#hero">Pranay<span>.</span></a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+    </ul>
+    <a href="mailto:waghmareps12@gmail.com" class="nav-cta">
+        <i class="fas fa-envelope"></i> Get in touch
+    </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-inner" data-aos="fade-up">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="dot"></span> Open to opportunities
+                </div>
+                <h1>Pranay Suresh<br>Waghmare</h1>
+                <p class="hero-subtitle">Data Scientist · AI &amp; Automation Engineer</p>
+                <p class="hero-location">
+                    <i class="fas fa-map-marker-alt"></i> Jacksonville, FL
                 </p>
-                
-                <p>
-                    With a strong background in <span class="font-semibold">data science, software engineering, and automation</span>, I have successfully implemented <span class="font-semibold">end-to-end AI solutions</span>, optimized decision-making processes, and automated repetitive workflows for businesses across multiple industries. My passion lies in <span class="font-semibold">developing scalable AI models, integrating cutting-edge generative AI technologies, and solving complex business challenges using data-driven approaches</span>.
+                <p class="hero-bio">
+                    Building AI-driven systems that turn complex data into real-world impact —
+                    from LLM pipelines and RAG chatbots to end-to-end automation workflows.
                 </p>
-                
-                <p>
-                    My experience includes <span class="font-semibold">building Retrieval-Augmented Generation (RAG) systems, automating data pipelines, and developing predictive analytics models</span> for sales, healthcare, and enterprise applications. I thrive in <span class="font-semibold">fast-paced, innovation-driven environments</span> where I can combine <span class="font-semibold">machine learning, cloud computing, and software engineering</span> to deliver impactful solutions.
-                </p>
-            </div>
-        </div>
-
-        <!-- Experience Section -->
-        <div class="mt-12" data-aos="fade-up">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-briefcase text-blue-500 mr-2"></i>Experience
-            </h2>
-            <div class="space-y-8">
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800">Genpact - Data Scientist</h3>
-                            <p class="text-gray-500"><i class="far fa-calendar-alt mr-2"></i>June 2022 – Present | Jacksonville, US</p>
-                        </div>
-                    </div>
-                    <ul class="list-disc list-inside text-gray-600 space-y-3 ml-4">
-                        <li>Designed and deployed a Retrieval-Augmented Generation (RAG) chatbot integrated with LangChain and Azure OpenAI, leveraging FAISS and pandas DataFrame agents to streamline sales inquiry workflows. Reduced customer response time by 80%.</li>
-                        <li>Led the implementation of Generative AI solutions across the organization, including designing RAG-based chatbots, automating report generation workflows, and deploying web automation agents; collaborated with clients to pitch tailored AI solutions, driving adoption and enhancing decision-making efficiency.</li>
-                        <li>Migrated the entire legacy SAS-based codebase workflows to Python, automating quota-setting and payout processes. Achieved an 80% reduction in manual effort and a 20% improvement in accuracy.</li>
-                        <li>Implemented end-to-end churn analytics solution for a healthcare client using XGBoost and AWS SageMaker services. Model exceeded performance targets with 83% test accuracy.</li>
-                        <li>Developed and automated data pipelines on AWS using Alteryx to ingest data from diverse sources, transform it, and load into Amazon S3 and Redshift. Increased efficiency of ETL process by 30% through implementing reusable workflows.</li>
-                        <li>Developed a Selenium-based web automation script to automate payment uploads for approximately 250 vendors, reducing manual processing time by 90% and significantly improving operational efficiency.</li>
-                        <li>Established A/B testing frameworks, implemented reporting dashboards, and communicated data-driven insights to executive stakeholders, enabling data-informed product development and growth initiatives.</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800">Dar India Private Limited - Structural Engineer – Data Analyst</h3>
-                            <p class="text-gray-500"><i class="far fa-calendar-alt mr-2"></i>July 2016 – July 2021 | Pune, India</p>
-                        </div>
-                    </div>
-                    <ul class="list-disc list-inside text-gray-600 space-y-3 ml-4">
-                        <li>Automated structural analysis workflows by developing custom ETABSxPython scripts, reducing analysis time for complex projects by 40% and enabling 30% faster iterations for design optimization across projects worth over $10 million.</li>
-                        <li>Streamlined interdisciplinary collaboration by integrating structural models from ETABS with Revit, improving data exchange efficiency by 50%, reducing rework by 20%, and ensuring error-free project delivery for projects valued at $25 million.</li>
-                        <li>Developed automation scripts to optimize repetitive structural design tasks, boosting productivity by 25% and reducing errors, achieving annual cost savings of over $100,000.</li>
-                    </ul>
+                <div class="hero-actions">
+                    <a href="http://www.linkedin.com/in/waghmareps12" class="btn-primary">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/waghmareps12" class="btn-outline">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://huggingface.co/waghmareps12" class="btn-outline">
+                        <i class="fas fa-robot"></i> Hugging Face
+                    </a>
+                    <a href="https://medium.com/@pranay1001090" class="btn-outline">
+                        <i class="fab fa-medium"></i> Medium
+                    </a>
                 </div>
             </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="mt-12" data-aos="fade-up">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-project-diagram text-blue-500 mr-2"></i>Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-indigo-500 text-3xl mb-4">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">SmolLM - Small Language Model</h3>
-                    <p class="text-gray-600 mb-4">Implemented a 125M parameter language model optimized for consumer hardware, featuring gradient accumulation and length-based batch scheduling. Designed for efficient training on limited VRAM (4GB+).</p>
-                    <div class="flex gap-2">
-                        <a href="https://github.com/waghmareps12/SmolLM" 
-                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                            <i class="fab fa-github text-gray-700 mr-2"></i>
-                            <span>View Code</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-blue-500 text-3xl mb-4">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">LangChain-Mistral-Ollama Chatbot</h3>
-                    <p class="text-gray-600 mb-4">Built a conversational AI interface using Mistral model via Ollama, integrated with LangChain and Chainlit for deployment.</p>
-                    <div class="flex gap-2">
-                        <a href="https://github.com/waghmareps12/langchain-mistral-ollama-chainlit" 
-                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                            <i class="fab fa-github text-gray-700 mr-2"></i>
-                            <span>View Code</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-green-500 text-3xl mb-4">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Local RAG System with Ollama</h3>
-                    <p class="text-gray-600 mb-4">Developed a Retrieval-Augmented Generation system using FAISS for efficient document search and Ollama for local LLM integration.</p>
-                    <div class="flex gap-2">
-                        <a href="https://github.com/waghmareps12/ollama_local_rag" 
-                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                            <i class="fab fa-github text-gray-700 mr-2"></i>
-                            <span>View Code</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-blue-500 text-3xl mb-4">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Credit Card Fraud Detection</h3>
-                    <p class="text-gray-600 mb-4">Developed ML models for fraud detection, achieving 85% ROC AUC through advanced feature engineering and model optimization.</p>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-purple-500 text-3xl mb-4">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Disney+ Character Recommendation</h3>
-                    <p class="text-gray-600 mb-4">Created a recommendation engine using NLP and sentiment analysis on Reddit data to suggest Disney+ characters.</p>
-                </div>
-
-                <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-red-500 text-3xl mb-4">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">LFM Speech-to-Type</h3>
-                    <p class="text-gray-600 mb-4">Local WhisperFlow alternative using Liquid AI's LFM2.5-Audio-1.5B model. Press a hotkey to record speech and instantly type the transcription into any input field — fully on-device, no cloud, no API keys.</p>
-                    <div class="flex gap-2">
-                        <a href="https://github.com/waghmareps12/LFM_AUDIO_WINDOWS"
-                           class="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition duration-300">
-                            <i class="fab fa-github text-gray-700 mr-2"></i>
-                            <span>View Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="mt-12" data-aos="fade-up">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-tools text-blue-500 mr-2"></i>Skills
-            </h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full">Python</span>
-                <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full">SQL</span>
-                <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full">AWS</span>
-                <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full">TensorFlow</span>
-                <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full">PyTorch</span>
-                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full">NLP</span>
-                <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-full">Deep Learning</span>
-                <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-full">Data Engineering</span>
+            <div class="hero-photo">
+                <img src="self-image.webp" alt="Pranay Waghmare">
             </div>
         </div>
     </div>
+</section>
 
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
+<!-- ── ABOUT ── -->
+<section id="about">
+    <div class="container" data-aos="fade-up">
+        <p class="section-eyebrow">About me</p>
+        <h2 class="section-heading">Who I am</h2>
+        <div class="section-rule"></div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I specialize in <strong>AI-driven automation, NLP, and data analytics</strong>.
+                    My expertise spans developing intelligent systems, streamlining workflows, and
+                    leveraging machine learning to drive measurable business impact.
+                </p>
+                <p>
+                    With a background in <strong>data science, software engineering, and automation</strong>,
+                    I've shipped end-to-end AI solutions — RAG chatbots, automated data pipelines,
+                    predictive models — for clients across healthcare, sales, and enterprise tech.
+                </p>
+                <p>
+                    I thrive where <strong>machine learning meets engineering</strong>: turning
+                    research-grade models into production-ready tools that save time, reduce cost,
+                    and sharpen decision-making.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="num">8+</span>
+                    <span class="lbl">Years experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="num">80%</span>
+                    <span class="lbl">Effort cut via automation</span>
+                </div>
+                <div class="stat-card">
+                    <span class="num">$25M+</span>
+                    <span class="lbl">Projects delivered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="num">10+</span>
+                    <span class="lbl">AI &amp; ML projects</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+    <div class="container" data-aos="fade-up">
+        <p class="section-eyebrow">Work history</p>
+        <h2 class="section-heading">Experience</h2>
+        <div class="section-rule"></div>
+        <div class="timeline">
+
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-head">
+                    <div>
+                        <div class="tl-role">Data Scientist</div>
+                        <div class="tl-company">Genpact</div>
+                    </div>
+                    <span class="tl-period">June 2022 – Present &nbsp;·&nbsp; Jacksonville, US</span>
+                </div>
+                <ul class="tl-list">
+                    <li>Deployed a RAG chatbot with LangChain &amp; Azure OpenAI (FAISS + DataFrame agents), cutting customer response time by 80%.</li>
+                    <li>Led org-wide Generative AI adoption — RAG chatbots, automated report generation, and web automation agents.</li>
+                    <li>Migrated SAS codebase to Python for quota-setting and payouts; reduced manual effort 80%, improved accuracy 20%.</li>
+                    <li>Built churn analytics for a healthcare client with XGBoost &amp; AWS SageMaker — 83% test accuracy.</li>
+                    <li>Automated ETL pipelines on AWS (Alteryx → S3 / Redshift), improving pipeline efficiency by 30%.</li>
+                    <li>Selenium automation for ~250-vendor payment uploads, cutting manual processing time by 90%.</li>
+                </ul>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-head">
+                    <div>
+                        <div class="tl-role">Structural Engineer – Data Analyst</div>
+                        <div class="tl-company">Dar India Private Limited</div>
+                    </div>
+                    <span class="tl-period">July 2016 – July 2021 &nbsp;·&nbsp; Pune, India</span>
+                </div>
+                <ul class="tl-list">
+                    <li>Developed ETABS×Python scripts reducing structural analysis time by 40%, enabling 30% faster design iterations on $10M+ projects.</li>
+                    <li>Integrated ETABS with Revit, improving data exchange efficiency by 50% and reducing rework by 20% on $25M projects.</li>
+                    <li>Built automation scripts for repetitive design tasks — 25% productivity boost, $100K+ annual cost savings.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+    <div class="container" data-aos="fade-up">
+        <p class="section-eyebrow">What I've built</p>
+        <h2 class="section-heading">Projects</h2>
+        <div class="section-rule"></div>
+        <div class="projects-grid">
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-microphone"></i></div>
+                <div class="proj-title">LFM Speech-to-Type</div>
+                <p class="proj-desc">Local WhisperFlow alternative powered by Liquid AI's LFM2.5-Audio-1.5B. Press a hotkey, speak, and text types into any field — fully on-device, no cloud, no API keys.</p>
+                <a href="https://github.com/waghmareps12/LFM_AUDIO_WINDOWS" class="proj-link">
+                    <i class="fab fa-github"></i> View code <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-brain"></i></div>
+                <div class="proj-title">SmolLM — Small Language Model</div>
+                <p class="proj-desc">125M parameter LLM optimized for consumer hardware with gradient accumulation and length-based batch scheduling. Trains on as little as 4 GB VRAM.</p>
+                <a href="https://github.com/waghmareps12/SmolLM" class="proj-link">
+                    <i class="fab fa-github"></i> View code <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-robot"></i></div>
+                <div class="proj-title">LangChain-Mistral Chatbot</div>
+                <p class="proj-desc">Conversational AI interface using the Mistral model via Ollama, integrated with LangChain and Chainlit for rapid deployment.</p>
+                <a href="https://github.com/waghmareps12/langchain-mistral-ollama-chainlit" class="proj-link">
+                    <i class="fab fa-github"></i> View code <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-search"></i></div>
+                <div class="proj-title">Local RAG System with Ollama</div>
+                <p class="proj-desc">Retrieval-Augmented Generation using FAISS for efficient document search and Ollama for fully local LLM inference — no external API needed.</p>
+                <a href="https://github.com/waghmareps12/ollama_local_rag" class="proj-link">
+                    <i class="fab fa-github"></i> View code <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-credit-card"></i></div>
+                <div class="proj-title">Credit Card Fraud Detection</div>
+                <p class="proj-desc">ML pipeline for fraud detection achieving 85% ROC AUC through advanced feature engineering and ensemble model optimization.</p>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-icon"><i class="fas fa-film"></i></div>
+                <div class="proj-title">Disney+ Character Recommendation</div>
+                <p class="proj-desc">Recommendation engine using NLP and sentiment analysis on Reddit data to surface personalized Disney+ character suggestions.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+    <div class="container" data-aos="fade-up">
+        <p class="section-eyebrow">Technical toolkit</p>
+        <h2 class="section-heading">Skills</h2>
+        <div class="section-rule"></div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-cat">Languages</div>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">SAS</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-cat">AI / ML</div>
+                <div class="skill-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">XGBoost</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Deep Learning</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-cat">LLM &amp; GenAI</div>
+                <div class="skill-tags">
+                    <span class="tag">LangChain</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">Azure OpenAI</span>
+                    <span class="tag">Ollama</span>
+                    <span class="tag">FAISS</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-cat">Cloud &amp; Data</div>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">SageMaker</span>
+                    <span class="tag">Redshift</span>
+                    <span class="tag">S3</span>
+                    <span class="tag">Alteryx</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-cat">Engineering</div>
+                <div class="skill-tags">
+                    <span class="tag">Selenium</span>
+                    <span class="tag">ETL Pipelines</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Data Engineering</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-icons">
+        <a href="mailto:waghmareps12@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="http://www.linkedin.com/in/waghmareps12" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/waghmareps12" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://huggingface.co/waghmareps12" title="Hugging Face"><i class="fas fa-robot"></i></a>
+        <a href="https://medium.com/@pranay1001090" title="Medium"><i class="fab fa-medium"></i></a>
+        <a href="https://twitter.com/waghmareps12" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© 2025 Pranay Suresh Waghmare · Built with care</p>
+</footer>
+
+<script>
+    AOS.init({ duration: 700, once: true, offset: 60 });
+</script>
 </body>
 </html>
